@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+#addBoardInput {
+    width: 90%;
+    font-size: 16px;
+    border: none;
+    outline: none;
+}
+
+#pages {
+    height: calc(100vh - 65px);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#boards {
+    height: calc(100vh - 65px);
+    overflow-x: auto;
+    width: 100%;
+}
+
+.todoBody {
+    padding: 20px;
+    min-width: 350px;
+    min-height: 250px;
+    max-height: 450px;
+    width: 350px;
+    border: 1px solid black;
+    background-color: #fff;
+}
+
+.todoBody i {
+    font-size: 25px;
+}
+
+.todoAddBody {
+    padding: 20px;
+    min-width: 350px;
+    height: 90px;
+    width: 350px;
+    border: 1px solid black;
+    background-color: #fff;
+}
+
+.todo-header {
+    display: flex;
+}
+
+.todo-actions-btn {
+    border: none;
+    outline: none;
+}
+
+.todo-title {
+    width: 90%;
+}
+
+#colorInput {
+    height: 100px;
+}
+
+.task-dropdown-btn {
+    width: 30px;
+    height: 30px;
+}
+
+.task-dropdown-menu {
+    cursor: pointer;
+}
+
+.start-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(297deg, #ddc9a8, #25a7e6);
+}
+
+header {
+    width: 100%;
+    min-height: 65px;
+    background: linear-gradient(285deg, #1d01f8, #00ccff);
+}
+
+.board-title {
+    width: 100%;
+    height: 60px;
+    color: #b4b4b4;
+    font-weight: 400;
+}
+
+.setBgVariant {
+    cursor: pointer;
+    height: 250px;
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.todo-list-body {
+    overflow: hidden;
+    overflow-y: auto;
+    height: 68%;
+}
+
+.accordion-horizontal .accordion-item {
+    display: inline-block;
+    width: 250px; /* Adjust as needed */
+}
+
+.accordion-horizontal .accordion-button {
+    text-align: left; /* Align text to the left */
+    white-space: nowrap; /* Prevent button from wrapping */
+    width: 100%; /* Full width of parent */
+    border-radius: 0; /* Remove rounded corners if not needed */
+}
+
+.accordion-horizontal .accordion-collapse {
+    display: block;
+}
+
+.accordion-horizontal .accordion-body {
+    padding: 1rem;
+}

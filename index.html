@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        />
+
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <div
+            id="alert-container"
+            class="position-fixed top-0 end-0 p-3"
+            style="z-index: 2000"
+        ></div>
+        <header class="d-flex justify-content-between align-items-center px-3">
+            <div
+                class="left d-flex justify-content-center align-items-center gap-3"
+            >
+                <button
+                    class="btn btn-outline-dark"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#boardsOffCanvas"
+                    aria-controls="boardsOffCanvas"
+                >
+                    <i class="fa fa-list" aria-hidden="true"></i>
+                </button>
+                <div
+                    class="offcanvas offcanvas-start"
+                    tabindex="-1"
+                    id="boardsOffCanvas"
+                    aria-labelledby="boardsOffCanvasLabel"
+                >
+                    <div class="offcanvas-header">
+                        <h2 class="offcanvas-title" id="boardsOffCanvasLabel">
+                            TasksBoard
+                        </h2>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="list-group boards-body">
+                            <li
+                                class="list-group-item d-flex justify-content-between align-items-center"
+                            >
+                                A list item
+                                <span class="badge text-bg-primary rounded-pill"
+                                    >14</span
+                                >
+                            </li>
+                            <li
+                                class="list-group-item d-flex justify-content-between align-items-center"
+                            >
+                                A second list item
+                                <span class="badge text-bg-primary rounded-pill"
+                                    >2</span
+                                >
+                            </li>
+                            <li
+                                class="list-group-item d-flex justify-content-between align-items-center"
+                            >
+                                A third list item
+                                <span class="badge text-bg-primary rounded-pill"
+                                    >1</span
+                                >
+                            </li>
+                            <li
+                                class="list-group-item d-flex justify-content-between align-items-center"
+                            >
+                                <input
+                                    type="text"
+                                    id="addBoardInput"
+                                    class="border-0 outline-none"
+                                    placeholder="Enter new board name"
+                                />
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <h3 class="p-0 m-0">TasksBoard</h3>
+            </div>
+            <div class="right d-flex justify-content-center align-items-center">
+                <button
+                    onclick="toggleView()"
+                    class="btn border-0 text-light outline-0"
+                >
+                    <i class="fa-solid fa-grip-vertical fs-4 toggle-icon"></i>
+                </button>
+                <div class="dropdown">
+                    <button
+                        class="btn border-0 text-light outline-0"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        <i class="fa-solid fa-gear fs-4"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>Action</li>
+                        <li>Another action</li>
+                        <li>Something else here</li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button
+                        class="btn border-0 text-light outline-0"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        <i class="fa-regular fa-circle-user fs-4"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>Action</li>
+                        <li>Another action</li>
+                        <li>Something else here</li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div
+            id="pages"
+            class="conatiner d-flex flex-column justify-content-baseline d-flex"
+        >
+            <div class="start-page"></div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="./main.js"></script>
+        <script src="./boards.js"></script>
+        <script src="./todos.js"></script>
+        <script src="./tasks.js"></script>
+    </body>
+</html>
