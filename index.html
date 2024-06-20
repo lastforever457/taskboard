@@ -15,7 +15,6 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         />
-
         <link rel="stylesheet" href="./style.css" />
     </head>
     <body>
@@ -24,127 +23,378 @@
             class="position-fixed top-0 end-0 p-3"
             style="z-index: 2000"
         ></div>
-        <header class="d-flex justify-content-between align-items-center px-3">
-            <div
-                class="left d-flex justify-content-center align-items-center gap-3"
-            >
-                <button
-                    class="btn btn-outline-dark"
-                    type="button"
-                    data-bs-toggle="offcanvas"
-                    data-bs-target="#boardsOffCanvas"
-                    aria-controls="boardsOffCanvas"
-                >
-                    <i class="fa fa-list" aria-hidden="true"></i>
-                </button>
-                <div
-                    class="offcanvas offcanvas-start"
-                    tabindex="-1"
-                    id="boardsOffCanvas"
-                    aria-labelledby="boardsOffCanvasLabel"
-                >
-                    <div class="offcanvas-header">
-                        <h2 class="offcanvas-title" id="boardsOffCanvasLabel">
-                            TasksBoard
-                        </h2>
+        <div
+            class="modal fade modal-xl"
+            id="userProfile"
+            tabindex="-1"
+            aria-labelledby="userProfileLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="userProfileLabel">
+                            Profile
+                        </h1>
                         <button
                             type="button"
                             class="btn-close"
-                            data-bs-dismiss="offcanvas"
+                            data-bs-dismiss="modal"
                             aria-label="Close"
                         ></button>
                     </div>
-                    <div class="offcanvas-body">
-                        <ul class="list-group boards-body">
-                            <li
-                                class="list-group-item d-flex justify-content-between align-items-center"
+                    <div class="modal-body" id="user-profile-modal-body"></div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            Close
+                        </button>
+                        <button
+                            id="saveUserProfileBtn"
+                            type="button"
+                            class="btn btn-primary"
+                        >
+                            Save changes
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                            Modal title
+                        </h1>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">...</div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            Close
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                            Save changes
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section id="landing">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div
+                            class="left h-100 d-flex flex-column justify-content-around"
+                        >
+                            <div
+                                class="top d-flex flex-column justify-content-center"
                             >
-                                A list item
-                                <span class="badge text-bg-primary rounded-pill"
-                                    >14</span
+                                <p class="p-0 m-0 entry-title">TasksBoard</p>
+                                <p class="p-0 m-0 entry-desc">
+                                    Todo List for your daily works
+                                </p>
+                            </div>
+                            <div class="middle d-flex align-items-center gap-3">
+                                <button
+                                    class="btn btn-light col-3"
+                                    onclick="clickLogin()"
                                 >
+                                    <a
+                                        class="text-decoration-none fs-4 w-100 h-100"
+                                        >Sign In</a
+                                    >
+                                </button>
+                                <button
+                                    class="btn btn-outline-light col-3"
+                                    onclick="clickRegister()"
+                                >
+                                    <a
+                                        class="text-decoration-none fs-4 w-100 h-100"
+                                        >Sign Up</a
+                                    >
+                                </button>
+                            </div>
+                            <div
+                                class="bottom d-flex flex-column justify-content-center"
+                            >
+                                <p class="p-0 m-0 entry-author text-light">
+                                    <span style="color: #5452f6"
+                                        ><i class="fa-solid fa-at"></i
+                                    ></span>
+                                    Hikmatilla Xudoyberdiyev
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="right h-100 position-relative entry-right">
+                            <img src="./bg.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="register" class="d-none register-body">
+            <div class="register-page row">
+                <div class="col-md-5">
+                    <div class="design">
+                        <div class="big"></div>
+                        <div class="small"></div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="form d-flex align-items-center">
+                        <form
+                            class="bg-transparent d-flex flex-column justify-content-center"
+                        >
+                            <p class="register-title p-0 m-0 mb-4">Register</p>
+                            <input
+                                type="text"
+                                placeholder="Enter your first name"
+                                class="form-control bg-transparent p-2 my-2"
+                                autocomplete="name"
+                                id="registerNameInput"
+                                required
+                            />
+                            <input
+                                type="text"
+                                placeholder="Enter your last name"
+                                class="form-control bg-transparent p-2 my-2"
+                                autocomplete="name"
+                                id="registerLastInput"
+                                required
+                            />
+                            <input
+                                type="date"
+                                class="form-control bg-transparent p-2 my-2"
+                                id="registerBirthDateInput"
+                                required
+                            />
+                            <input
+                                type="username"
+                                placeholder="Enter your username"
+                                class="form-control bg-transparent p-2 my-2"
+                                id="registerusernameInput"
+                                required
+                            />
+                            <input
+                                type="email"
+                                placeholder="Enter your email"
+                                class="form-control bg-transparent p-2 my-2"
+                                autocomplete="email"
+                                id="registerEmailInput"
+                                required
+                            />
+                            <input
+                                type="password"
+                                placeholder="Enter your password"
+                                class="form-control bg-transparent p-2 my-2"
+                                autocomplete="new-password"
+                                id="registerPasswordInput"
+                                required
+                            />
+                            <button
+                                onclick="registeringUser(event)"
+                                class="btn btn-outline-light w-50 my-2"
+                            >
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                                Sign up
+                            </button>
+                            <p class="p-0 m-0 my-2 text-light">
+                                You have an account?
+                                <a class="text-info" onclick="clickLogin()"
+                                    >Log In</a
+                                >
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="login" class="d-none">
+            <div class="login-page row">
+                <div class="col-md-5">
+                    <div class="design">
+                        <div class="big"></div>
+                        <div class="small"></div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="form d-flex align-items-center">
+                        <form
+                            id="loginForm"
+                            class="bg-transparent d-flex flex-column justify-content-center"
+                        >
+                            <p class="login-title p-0 m-0 mb-4">Log In</p>
+                            <input
+                                type="email"
+                                placeholder="Enter your email"
+                                class="form-control bg-transparent p-2 my-2"
+                                autocomplete="email"
+                                id="loginEmailInput"
+                                required
+                            />
+                            <input
+                                type="password"
+                                placeholder="Enter your password"
+                                class="form-control bg-transparent p-2 my-2"
+                                autocomplete="new-password"
+                                id="loginPasswordInput"
+                                required
+                            />
+                            <button
+                                type="submit"
+                                class="btn btn-outline-light w-50 my-2"
+                            >
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                                Login
+                            </button>
+                            <p class="p-0 m-0 my-2 text-light">
+                                Don't have an account?
+                                <a class="text-info" onclick="clickRegister()"
+                                    >Register Here</a
+                                >
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="dashboard" class="d-none">
+            <header
+                class="d-flex justify-content-between align-items-center px-3 shadow-sm"
+            >
+                <div
+                    class="left d-flex justify-content-center align-items-center gap-3"
+                >
+                    <button
+                        class="btn btn-outline-dark"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#boardsOffCanvas"
+                        aria-controls="boardsOffCanvas"
+                    >
+                        <i class="fa fa-list" aria-hidden="true"></i>
+                    </button>
+                    <div
+                        class="offcanvas offcanvas-start"
+                        tabindex="-1"
+                        id="boardsOffCanvas"
+                        aria-labelledby="boardsOffCanvasLabel"
+                    >
+                        <div class="offcanvas-header">
+                            <h3
+                                class="offcanvas-title"
+                                id="boardsOffCanvasLabel"
+                            >
+                                Boards
+                            </h3>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="offcanvas"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="list-group boards-body"></ul>
+                        </div>
+                    </div>
+                    <h3 class="p-0 m-0">TasksBoard</h3>
+                </div>
+                <div
+                    class="right d-flex justify-content-center align-items-center"
+                >
+                    <button
+                        onclick="toggleView()"
+                        class="btn border-0 outline-0"
+                    >
+                        <i
+                            class="fa-solid fa-grip-vertical fs-4 toggle-icon"
+                        ></i>
+                    </button>
+                    <div class="dropdown">
+                        <button
+                            class="btn border-0 outline-0"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
+                            <i class="fa-solid fa-gear fs-4"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>Action</li>
+                            <li>Another action</li>
+                            <li>Something else here</li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <button
+                            class="btn border-0 outline-0"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
+                            <i class="fa-regular fa-circle-user fs-4"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li
+                                data-bs-toggle="modal"
+                                data-bs-target="#userProfile"
+                                class="dropdown-item d-flex gap-2 align-items-center user-profile-btn"
+                            >
+                                <i class="fa-solid fa-address-card"></i>Profile
                             </li>
                             <li
-                                class="list-group-item d-flex justify-content-between align-items-center"
+                                onclick="logOut()"
+                                class="dropdown-item d-flex gap-2 align-items-center"
                             >
-                                A second list item
-                                <span class="badge text-bg-primary rounded-pill"
-                                    >2</span
-                                >
-                            </li>
-                            <li
-                                class="list-group-item d-flex justify-content-between align-items-center"
-                            >
-                                A third list item
-                                <span class="badge text-bg-primary rounded-pill"
-                                    >1</span
-                                >
-                            </li>
-                            <li
-                                class="list-group-item d-flex justify-content-between align-items-center"
-                            >
-                                <input
-                                    type="text"
-                                    id="addBoardInput"
-                                    class="border-0 outline-none"
-                                    placeholder="Enter new board name"
-                                />
-                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                <i
+                                    class="fa-solid fa-arrow-right-from-bracket fs-6"
+                                ></i
+                                >Log out
                             </li>
                         </ul>
                     </div>
                 </div>
-                <h3 class="p-0 m-0">TasksBoard</h3>
+            </header>
+            <div
+                id="pages"
+                class="conatiner d-flex flex-column justify-content-baseline d-flex"
+            >
+                <div class="start-page"></div>
             </div>
-            <div class="right d-flex justify-content-center align-items-center">
-                <button
-                    onclick="toggleView()"
-                    class="btn border-0 text-light outline-0"
-                >
-                    <i class="fa-solid fa-grip-vertical fs-4 toggle-icon"></i>
-                </button>
-                <div class="dropdown">
-                    <button
-                        class="btn border-0 text-light outline-0"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                    >
-                        <i class="fa-solid fa-gear fs-4"></i>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li>Action</li>
-                        <li>Another action</li>
-                        <li>Something else here</li>
-                    </ul>
-                </div>
-                <div class="dropdown">
-                    <button
-                        class="btn border-0 text-light outline-0"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                    >
-                        <i class="fa-regular fa-circle-user fs-4"></i>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li>Action</li>
-                        <li>Another action</li>
-                        <li>Something else here</li>
-                    </ul>
-                </div>
-            </div>
-        </header>
-        <div
-            id="pages"
-            class="conatiner d-flex flex-column justify-content-baseline d-flex"
-        >
-            <div class="start-page"></div>
-        </div>
+            <div id="main-page"></div>
+        </section>
+        <section id="admin" class="d-none">Admin Page</section>
+
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="./main.js"></script>
+        <script src="./profile.js"></script>
+        <script src="./login.js"></script>
+        <script src="./register.js"></script>
         <script src="./boards.js"></script>
         <script src="./todos.js"></script>
         <script src="./tasks.js"></script>

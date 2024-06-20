@@ -175,4 +175,3 @@ const enableTaskEditing = (taskId, todoId) => {
         });
     }
 };
-

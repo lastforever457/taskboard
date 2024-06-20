@@ -1,10 +1,238 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+}
+
+#login {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #090e18;
+}
+
+.login-page {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.design {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.design > .big {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    min-height: 130vh;
+    width: 120vh;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        #ba7ecf 2%,
+        #f19ed0 22%,
+        #948df2 43%,
+        #b9c2ff 73%,
+        #fbcea5 100%
+    );
+}
+
+.design > .small {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    min-height: 70vh;
+    width: 55vh;
+    background-color: #090e18;
+    border-radius: 50%;
+}
+
+.login-page .form form {
+    min-height: 100vh;
+}
+
+.login-page .form form > .login-title {
+    background: linear-gradient(
+        to right,
+        #ba7ecf 2%,
+        #f19ed0 22%,
+        #948df2 43%,
+        #b9c2ff 73%,
+        #fbcea5 100%
+    );
+    background-clip: text;
+    color: rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+    font-size: 96px;
+}
+
+.login-page .form form > input {
+    min-width: 30vw;
+    max-width: 40vw;
+    color: #fff;
+}
+
+.login-page .form form > input::placeholder {
+    color: gainsboro;
+}
+
+#register {
+    background-color: #090e18;
+}
+
+.register-page {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.design {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.design > .big {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    min-height: 130vh;
+    width: 120vh;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        #ba7ecf 2%,
+        #f19ed0 22%,
+        #948df2 43%,
+        #b9c2ff 73%,
+        #fbcea5 100%
+    );
+}
+
+.design > .small {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    min-height: 70vh;
+    width: 55vh;
+    background-color: #090e18;
+    border-radius: 50%;
+}
+
+.register-page .form form {
+    min-height: 100vh;
+}
+
+.register-page .form form > .register-title {
+    background: linear-gradient(
+        to right,
+        #ba7ecf 2%,
+        #f19ed0 22%,
+        #948df2 43%,
+        #b9c2ff 73%,
+        #fbcea5 100%
+    );
+    background-clip: text;
+    color: rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+    font-size: 96px;
+}
+
+.register-page .form form > input {
+    min-width: 30vw;
+    max-width: 40vw;
+    color: #fff;
+}
+
+.register-page .form form > input::placeholder {
+    color: gainsboro;
+}
+
+#landing {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #090e18;
+    overflow: hidden;
+    font-family: "DM Sans", sans-serif;
+}
+
+.container {
+    min-height: 100vh;
+}
+
+#landing .row {
+    min-height: 100vh;
+}
+
+.entry-title {
+    background: linear-gradient(
+        to right,
+        #ba7ecf 2%,
+        #f19ed0 22%,
+        #948df2 43%,
+        #b9c2ff 73%,
+        #fbcea5 100%
+    );
+    background-clip: text;
+    color: rgba(0, 0, 0, 0.1);
+    font-size: 95px;
+}
+
+.entry-desc {
+    color: #aaadfa;
+    font-size: 42px;
+}
+
+.entry-author {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.entry-right > img {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+}
+
+.middle > button:nth-child(1) > a {
+    color: #090e18;
+}
+
+.middle > button:nth-child(2) > a {
+    color: #fff;
+}
+
+.middle > button:nth-child(2):hover > a {
+    color: #090e18;
 }
 
 #addBoardInput {
@@ -83,13 +311,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(297deg, #ddc9a8, #25a7e6);
 }
 
 header {
     width: 100%;
     min-height: 65px;
-    background: linear-gradient(285deg, #1d01f8, #00ccff);
 }
 
 .board-title {
@@ -114,22 +340,26 @@ header {
     height: 68%;
 }
 
-.accordion-horizontal .accordion-item {
-    display: inline-block;
-    width: 250px; /* Adjust as needed */
+.start-page-form {
+    width: 40%;
+    height: 70vh;
+    backdrop-filter: blur(20px);
+    border-radius: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.accordion-horizontal .accordion-button {
-    text-align: left; /* Align text to the left */
-    white-space: nowrap; /* Prevent button from wrapping */
-    width: 100%; /* Full width of parent */
-    border-radius: 0; /* Remove rounded corners if not needed */
+.start-page-form > form {
+    width: 95%;
+    height: 95%;
+    border-radius: 2vw;
 }
 
-.accordion-horizontal .accordion-collapse {
-    display: block;
-}
-
-.accordion-horizontal .accordion-body {
-    padding: 1rem;
+.board-name {
+    margin: 0;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space: nowrap;
+    max-width: 200px;
 }
